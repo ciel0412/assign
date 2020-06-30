@@ -11,12 +11,16 @@ const assign = ({navigation})=>{
           
           <View style={styles.logo}> 
           <Image source={{uri:icon["logo"]}}style={{width:380,height:250}}/>
-          </View> 
-
+          </View>
+          
             <View style={styles.mycard}>
-             
+            <View style={styles.mycard_left}> 
+            <View style={styles.account}>
              <Image source={{uri:icon["account"]}}style={{width:30,height:30}}/>
+             </View>
              <Text style={styles.information}>帳號</Text>
+             </View>
+            
              <View style={styles.inputbox}>
              <TextInput 
              placeholder="abc@gmail.com"
@@ -24,22 +28,29 @@ const assign = ({navigation})=>{
              
              />
             </View>
-         </View>
+          </View>  
+         
              
            
         
         <View style={styles.mycard}>
+        <View style={styles.mycard_left}> 
+        <View style={styles.lock}>
           <Image source={{uri:icon["lock"]}}style={{width:30,height:30}}/>
-          <Text style={styles.information}>密碼</Text>
+        </View>  
+          <Text style={styles.information_1}>密碼</Text>
+         </View> 
           <View style={styles.inputbox_2}>
           <TextInput
           placeholder="請輸入6個字元以上"
           placeholderTextColor="#40230D"
+          secureTextEntry
           maxLength={8}
           />    
           </View>   
         </View>
         <TouchableOpacity style={styles.in}>
+            
             <Text style={styles.inname}>登入</Text>
         </TouchableOpacity>
         <View style={styles.information_2}>
@@ -71,25 +82,50 @@ const assign = ({navigation})=>{
       
 
     },
+    mycard_left:{
+      width:100,
+      height:80,
+      backgroundColor:"#40230D",
+      flexDirection:"row",
+      alignContent:"center",
+      
+      borderTopLeftRadius:20,
+      borderBottomLeftRadius:20,
+      
+    },
     mycard:{
       width:365,
       height:80,
-      marginLeft:22,
+      marginLeft:20,
       backgroundColor:"#FFFFFF",
       alignItems: "center",
       flexDirection:"row",
-      paddingLeft:20,
-      marginTop:25,
+      paddingLeft:0,
+      
+      marginTop:20,
       borderRadius:20,
 
     },
     account:{
- 
+       marginTop:20,
+       marginLeft:5,
+
+    },
+    lock:{
+        marginTop:20,
+        marginLeft:5,
     },
     information:{
         color:"#F9D9A6",
         fontSize:20,
         fontWeight:"bold",
+        marginTop:20,
+    },
+    information_1:{
+        color:"#F9D9A6",
+        fontSize:20,
+        fontWeight:"bold",
+        marginTop:20,
     },
 in:{
     width:365,
@@ -129,7 +165,7 @@ marginLeft:15,
  },
  inputbox_2:{
      marginLeft:15,
- },
+ }
 
  
    
